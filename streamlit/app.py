@@ -26,8 +26,9 @@ if st.button("Convert"):
         files = {"file": uploaded_file.getvalue()}
         with st.spinner("Wait for it..."):
             response = requests.post("http://0.0.0.0:8000/predict/", files=files)
+            print(response)
         latex_code = response.json()["data"]["pred"]
         st.code(latex_code)
-        st.markdown(f"${latex_code}$")
+        st.markdown(latex_code)
     else:
         st.error("Please upload an image.")

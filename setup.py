@@ -50,4 +50,5 @@ setup(
     extras_require={
         "dev": dev_packages,
     },
+    py_modules=[],
 )
